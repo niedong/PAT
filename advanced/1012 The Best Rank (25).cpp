@@ -23,7 +23,7 @@ int main() {
     sort(cr.begin(), cr.end());
     sort(mr.begin(), mr.end());
     sort(er.begin(), er.end());
-    
+
     for (int i = N - 1, r = 1; i >= 0; --i, ++r) {
         if (i == N - 1) {
             get<0>(rank[ar[i].second]) = r;
@@ -38,7 +38,7 @@ int main() {
             get<3>(rank[er[i].second]) = er[i].first == er[i + 1].first ? get<3>(rank[er[i + 1].second]) : r;
         }
     }
-    
+
     while (M--) {
         string id;
         cin >> id;
@@ -46,7 +46,7 @@ int main() {
             cout << "N/A" << endl;
             continue;
         }
-        
+
         static constexpr char ch[] = { 'A','C','M','E' };
         auto [a, c, m, e] = rank[id];
         array<int, 4> v({ a,c,m,e });

@@ -10,7 +10,7 @@ int main() {
         v.emplace_back(n % b);
         n /= b;
     }
-    
+
     bool flag = true;
     for (size_t i = 0, j = v.size() - 1; i < j; ++i, --j) {
         if (v[i] != v[j]) {

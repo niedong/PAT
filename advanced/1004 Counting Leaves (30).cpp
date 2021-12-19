@@ -12,25 +12,25 @@ int main() {
         while (k--) {
             int c;
             cin >> c;
-            hashmap[id].push_back(c);
+            hashmap[id].emplace_back(c);
         }
     }
-    
+
     vector<int> res(N);
 
     int depth = 0;
     queue<pair<int, int>> queue;
-    queue.push(make_pair(1, 0));
+    queue.emplace(1, 0);
     while (!queue.empty()) {
         auto [i, d] = queue.front();
         queue.pop();
-        
+
         depth = max(depth, d);
 
         if (hashmap[i].empty()) ++res[d];
-        for (auto const& num: hashmap[i]) queue.push(make_pair(num, d + 1));
+        for (auto const& num: hashmap[i]) queue.emplace(num, d + 1);
     }
-    
+
     cout << res.front();
     for (int i = 1; i <= depth; ++i) cout << ' ' << res[i];
     cout << endl;
