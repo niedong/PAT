@@ -3,7 +3,7 @@ def isPalindromic(n):
     return str(n) == str(n)[::-1]
 
 def main():
-    n, k = list(int(i) for i in input().split())
+    n, k = map(int, input().split())
     s, t = n, 0
     while t < k:
         if isPalindromic(s):
