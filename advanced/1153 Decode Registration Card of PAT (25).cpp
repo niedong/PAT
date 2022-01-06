@@ -31,7 +31,7 @@ int main() {
 
         card_to_score[c] = s;
         level_to_card[c.front()].emplace_back(c);
-        string site(c.begin() + 1, c.begin() + 4), date(c.begin() + 4, c.begin() + 10);
+        string site = c.substr(1, 3), date = c.substr(4, 6);
         site_to_card[site].emplace_back(c);
         date_site_to_card[date][site].emplace_back(c);
     }
